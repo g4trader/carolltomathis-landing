@@ -8,7 +8,7 @@ export default function Page() {
       <section className="section pt-10 pb-20 lg:flex lg:items-center lg:gap-16">
         <div className="relative flex-1 space-y-6">
           <span className="badge-pill">
-            Mentoria de Relacionamentos • Segunda chance com mais consciência
+            Mentoria de Relacionamentos • Mulheres Fortes merecem Relações Fortes
           </span>
 
           <h1 className="text-3xl sm:text-4xl lg:text-5xl font-semibold leading-tight tracking-tight">
@@ -29,10 +29,7 @@ export default function Page() {
             <a href={WHATSAPP_LINK} className="btn-primary" target="_blank">
               Falar com a Carol no WhatsApp
             </a>
-            <a
-              href="#mentoria"
-              className="btn-secondary"
-            >
+            <a href="#mentoria" className="btn-secondary">
               Ver como a mentoria funciona
             </a>
           </div>
@@ -48,7 +45,7 @@ export default function Page() {
               <span className="inline-flex h-6 w-6 items-center justify-center rounded-full bg-brand-500/10 text-[11px] text-brand-200">
                 2
               </span>
-              <span>Foco em mulheres em fase de recomeço.</span>
+              <span>Foco em mulheres em fase de recomeço amoroso.</span>
             </div>
             <div className="flex items-center gap-2">
               <span className="inline-flex h-6 w-6 items-center justify-center rounded-full bg-brand-500/10 text-[11px] text-brand-200">
@@ -61,22 +58,13 @@ export default function Page() {
 
         <div className="relative mt-10 lg:mt-0 flex-1 flex justify-center">
           <div className="relative h-[380px] w-[280px] sm:h-[420px] sm:w-[320px] lg:h-[460px] lg:w-[340px]">
-            <div className="absolute inset-0 rounded-[2.4rem] bg-gradient-to-br from-brand-500/40 via-slate-900 to-slate-900 blur-3xl" />
+            <div className="absolute -inset-4 rounded-[2.4rem] bg-gradient-to-br from-brand-500/40 via-slate-900 to-slate-900 blur-3xl" />
             <div className="relative h-full w-full rounded-[2.4rem] border border-slate-700/60 bg-slate-900/80 shadow-soft overflow-hidden">
-              <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_0,rgba(248,250,252,0.06),transparent_55%),radial-gradient(circle_at_80%_100%,rgba(248,250,252,0.08),transparent_55%)]" />
-              <div className="relative h-full w-full flex flex-col justify-end p-6">
-                <div className="mb-6 rounded-2xl bg-slate-800/80 p-4 text-xs text-slate-200">
-                  <p className="font-medium">Carol Tomathis</p>
-                  <p className="text-slate-300">
-                    Mentora de relacionamentos para mulheres que decidiram
-                    reescrever a própria história amorosa com mais consciência e
-                    autoestima.
-                  </p>
-                </div>
-                <p className="text-[10px] uppercase tracking-[0.2em] text-slate-500">
-                  Atendimento on-line • Vagas limitadas
-                </p>
-              </div>
+              <img
+                src="/carol-hero.jpg"
+                alt="Carol Tomathis falando em público com microfone na mão."
+                className="h-full w-full object-cover"
+              />
             </div>
           </div>
         </div>
@@ -127,14 +115,22 @@ export default function Page() {
       >
         <div className="space-y-6">
           <h2 className="text-2xl sm:text-3xl font-semibold">
-            Como a Carol conduz sua mentoria de relacionamentos
+            Quem é a Carol Tomathis na prática?
           </h2>
           <p className="text-sm sm:text-base text-slate-300">
-            Nada de frases prontas ou discursos que culpam você por tudo. A
-            metodologia da Carol une teoria, escuta ativa e exercícios
-            práticos para que você entenda sua própria história, fortaleça sua
-            autoimagem e ressignifique o que viveu.
+            Carol Tomathis é mentora de relacionamentos e criadora de conteúdos
+            que ajudam mulheres a transformar segundos relacionamentos em
+            relações mais conscientes. Nas redes, ela fala de limites, amor
+            próprio e escolhas maduras, com a frase que guia o seu trabalho:
+            mulheres fortes merecem relações fortes.
           </p>
+          <p className="text-sm sm:text-base text-slate-300">
+            No Instagram, Carol reúne mais de 3 mil pessoas acompanhando sua
+            rotina, aulas e reflexões sobre vida amorosa, recomeços e
+            autoconhecimento. Cada mentoria nasce dessa vivência direta com as
+            dúvidas reais das mulheres que chegam até ela todos os dias.
+          </p>
+
           <div className="grid gap-4 sm:grid-cols-2">
             <div className="card-soft space-y-2">
               <p className="text-xs font-semibold uppercase tracking-[0.16em] text-brand-200">
@@ -200,12 +196,67 @@ export default function Page() {
           <a href={WHATSAPP_LINK} className="btn-primary w-full" target="_blank">
             Quero conversar sobre valores no WhatsApp
           </a>
-          <div className="text-[11px] text-slate-500">
+          <div className="text-[11px] text-slate-500 space-y-1">
             <p>WhatsApp: +55 (51) 8400-2284</p>
             <p>E-mail: mentoria@carolltomathis.com.br</p>
-            <p>Site: carolltomathis.com.br</p>
+            <p>Instagram: @carolltomathis</p>
           </div>
         </aside>
+      </section>
+
+      {/* CAROL NO INSTAGRAM */}
+      <section className="section pb-16 space-y-8">
+        <header className="max-w-3xl space-y-3">
+          <h2 className="text-2xl sm:text-3xl font-semibold">
+            Carol em ação no Instagram
+          </h2>
+          <p className="text-sm sm:text-base text-slate-300">
+            A rotina da Carol também acontece ao vivo nos Reels, com conversas
+            diretas sobre segundos relacionamentos, limites e escolhas mais
+            maduras. Veja alguns conteúdos que as seguidoras mais salvam:
+          </p>
+        </header>
+
+        <div className="grid gap-6 md:grid-cols-3">
+          {[
+            {
+              title: "A mulher durona e as máscaras emocionais",
+              url: "https://www.instagram.com/reel/CyjQJzbPwmC/embed",
+            },
+            {
+              title: "Quando a briga vira silêncio que afasta",
+              url: "https://www.instagram.com/reel/DPBsrqNDNw4/embed",
+            },
+            {
+              title: "Para entrar em um relacionamento de verdade",
+              url: "https://www.instagram.com/reel/DQorUa1ADRs/embed",
+            },
+          ].map((reel) => (
+            <div key={reel.url} className="space-y-2">
+              <div className="aspect-[9/16] w-full overflow-hidden rounded-2xl border border-slate-800 bg-black/40">
+                <iframe
+                  src={reel.url}
+                  className="h-full w-full"
+                  allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+                  allowFullScreen
+                  loading="lazy"
+                  title={reel.title}
+                ></iframe>
+              </div>
+              <p className="text-xs text-slate-200">{reel.title}</p>
+            </div>
+          ))}
+        </div>
+
+        <div className="pt-2">
+          <a
+            href="https://www.instagram.com/carolltomathis/"
+            target="_blank"
+            className="text-xs font-semibold text-brand-200 underline underline-offset-4"
+          >
+            Ver o perfil completo da Carol no Instagram
+          </a>
+        </div>
       </section>
 
       {/* DEPOIMENTOS */}
