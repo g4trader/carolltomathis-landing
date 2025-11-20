@@ -1,6 +1,6 @@
 {
-  "name": "carolltomathis-landing",
-  "version": "1.0.1",
+  "name": "carolltomathis-landing-wow",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
     "dev": "next dev",

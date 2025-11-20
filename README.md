@@ -1,6 +1,7 @@
-# Landing page - Mentoria de Relacionamentos | Carol Tomathis
+# Landing page WOW - Mentoria de Relacionamentos | Carol Tomathis
 
-Projeto em Next.js + Tailwind pronto para deploy na Vercel.
+Segunda versão da landing, com layout em tons de blush/nude harmonizando
+com a foto da Carol, fundo animado e foco forte em conversão via WhatsApp.
 
 ## Como rodar
 
@@ -9,10 +10,6 @@ npm install
 npm run dev
 ```
 
-Depois, é só conectar o repositório na Vercel e fazer o deploy.
+Depois é só conectar o repositório na Vercel.
 
-Os botões principais (incluindo o botão flutuante) já apontam para o WhatsApp
-da Carol: `+55 51 8400-2284`.
-
-A foto principal está em `public/carol-hero.jpg` e pode ser substituída se
-você desejar.
+Foto principal: `public/carol-hero.jpg` (a mesma que você enviou).

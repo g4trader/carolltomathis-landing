@@ -8,20 +8,27 @@ const config = {
     extend: {
       colors: {
         brand: {
-          50: "#fff5f7",
-          100: "#ffe4ec",
-          200: "#ffbdd0",
-          300: "#ff94b3",
-          400: "#ff6b96",
-          500: "#ff3f7b",
-          600: "#e02662",
-          700: "#b81a4f",
-          800: "#8f123e",
-          900: "#66082d"
+          blush: "#f6d7cf",
+          nude: "#e1b8a5",
+          cocoa: "#b8876b",
+          deep: "#472b2b"
         }
       },
       boxShadow: {
-        soft: "0 18px 45px rgba(15, 23, 42, 0.18)"
+        soft: "0 24px 60px rgba(79, 38, 28, 0.28)"
+      },
+      borderRadius: {
+        "3xl": "1.75rem"
+      },
+      keyframes: {
+        "bg-flow": {
+          "0%": { backgroundPosition: "0% 50%" },
+          "50%": { backgroundPosition: "100% 50%" },
+          "100%": { backgroundPosition: "0% 50%" }
+        }
+      },
+      animation: {
+        "bg-flow": "bg-flow 18s ease-in-out infinite"
       }
     }
   },

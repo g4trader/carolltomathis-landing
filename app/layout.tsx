@@ -7,7 +7,7 @@ const WHATSAPP_LINK =
 export const metadata: Metadata = {
   title: "Mentoria de Relacionamentos | Carol Tomathis",
   description:
-    "Transforme sua vida amorosa com a mentoria de relacionamentos da Carol Tomathis. Atendimento acolhedor e prático com foco no seu próximo capítulo.",
+    "Landing page premium da mentoria de relacionamentos da Carol Tomathis, com foco em mulheres que decidiram reescrever a própria história amorosa.",
 };
 
 export default function RootLayout({
@@ -17,7 +17,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="pt-BR">
-      <body className="bg-slate-950 text-slate-100 antialiased">
+      <body className="min-h-screen bg-brand-deep/95 text-brand-deep antialiased">
+        {/* Fundo animado WOW */}
+        <div className="fixed inset-0 -z-20 bg-[radial-gradient(circle_at_0%_0%,#fbe5de,transparent_55%),radial-gradient(circle_at_100%_0%,#f6d7cf,transparent_55%),radial-gradient(circle_at_0%_100%,#e1b8a5,transparent_55%),radial-gradient(circle_at_100%_100%,#fdf6f3,transparent_55%)] bg-[length:140%_140%] animate-bg-flow" />
+        <div className="fixed inset-0 -z-10 bg-gradient-to-b from-white/40 via-white/10 to-transparent" />
+
         {children}
 
         {/* Botão flutuante de WhatsApp */}

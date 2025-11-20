@@ -11,22 +11,27 @@ body {
     "Segoe UI", sans-serif;
 }
 
+/* Helpers */
 .section {
   @apply max-w-6xl mx-auto px-4 md:px-6 lg:px-8;
 }
 
 .badge-pill {
-  @apply inline-flex items-center rounded-full border border-brand-400/40 bg-brand-500/10 px-3 py-1 text-xs font-medium uppercase tracking-[0.18em] text-brand-200;
+  @apply inline-flex items-center rounded-full bg-white/40 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.18em] text-brand-deep/80 shadow-sm backdrop-blur;
 }
 
 .btn-primary {
-  @apply inline-flex items-center justify-center rounded-full bg-emerald-500 px-6 py-3 text-sm font-semibold text-white shadow-soft transition hover:bg-emerald-400 hover:-translate-y-[1px] hover:shadow-xl active:translate-y-0 active:shadow-soft;
+  @apply inline-flex items-center justify-center rounded-full bg-brand-deep px-7 py-3 text-sm font-semibold text-white shadow-soft transition hover:bg-black hover:-translate-y-[1px] hover:shadow-xl active:translate-y-0 active:shadow-soft;
 }
 
 .btn-secondary {
-  @apply inline-flex items-center justify-center rounded-full border border-slate-700 bg-slate-900/60 px-6 py-3 text-sm font-semibold text-slate-100 shadow-sm transition hover:border-brand-400/70 hover:bg-slate-900;
+  @apply inline-flex items-center justify-center rounded-full border border-brand-deep/20 bg-white/40 px-7 py-3 text-sm font-semibold text-brand-deep shadow-sm backdrop-blur transition hover:bg-white hover:border-brand-deep/40;
 }
 
 .card-soft {
-  @apply rounded-3xl border border-slate-800/70 bg-slate-900/60 p-6 shadow-soft backdrop-blur;
+  @apply rounded-3xl border border-white/40 bg-white/60 p-6 shadow-soft backdrop-blur;
+}
+
+.text-label {
+  @apply text-[11px] font-semibold uppercase tracking-[0.18em] text-brand-deep/70;
 }
