@@ -2,36 +2,45 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --radius: 999px;
-}
-
 body {
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text",
-    "Segoe UI", sans-serif;
+  @apply bg-espresso text-champagne font-sans;
 }
 
-/* Helpers */
+/* Layout helpers */
 .section {
   @apply max-w-6xl mx-auto px-4 md:px-6 lg:px-8;
 }
 
 .badge-pill {
-  @apply inline-flex items-center rounded-full bg-white/40 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.18em] text-brand-deep/80 shadow-sm backdrop-blur;
+  @apply inline-flex items-center rounded-full bg-cocoa/80 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.18em] text-champagne/80 border border-champagne/20;
 }
 
 .btn-primary {
-  @apply inline-flex items-center justify-center rounded-full bg-brand-deep px-7 py-3 text-sm font-semibold text-white shadow-soft transition hover:bg-black hover:-translate-y-[1px] hover:shadow-xl active:translate-y-0 active:shadow-soft;
+  @apply inline-flex items-center justify-center rounded-full bg-emerald px-8 py-3 text-sm font-semibold text-white shadow-card transition hover:bg-emerald/90 hover:-translate-y-[1px] active:translate-y-0;
 }
 
 .btn-secondary {
-  @apply inline-flex items-center justify-center rounded-full border border-brand-deep/20 bg-white/40 px-7 py-3 text-sm font-semibold text-brand-deep shadow-sm backdrop-blur transition hover:bg-white hover:border-brand-deep/40;
+  @apply inline-flex items-center justify-center rounded-full border border-champagne/40 bg-transparent px-8 py-3 text-sm font-semibold text-champagne/90 shadow-sm transition hover:bg-cocoa/60 hover:border-champagne;
+}
+
+.card-dark {
+  @apply rounded-3xl border border-champagne/10 bg-cocoa/80 p-6 shadow-card backdrop-blur;
 }
 
 .card-soft {
-  @apply rounded-3xl border border-white/40 bg-white/60 p-6 shadow-soft backdrop-blur;
+  @apply rounded-3xl border border-champagne/15 bg-espresso/80 p-6 shadow-card backdrop-blur;
 }
 
 .text-label {
-  @apply text-[11px] font-semibold uppercase tracking-[0.18em] text-brand-deep/70;
+  @apply text-[11px] font-semibold uppercase tracking-[0.24em] text-champagne/60;
+}
+
+/* Cinematic background texture */
+.bg-grain {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.22;
+  mix-blend-mode: soft-light;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 160 160' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='noStitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.9'/%3E%3C/svg%3E");
 }

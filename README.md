@@ -1,7 +1,8 @@
-# Landing page WOW - Mentoria de Relacionamentos | Carol Tomathis
+# Landing page Cinematic WOW - Mentoria de Relacionamentos | Carol Tomathis
 
-Segunda versão da landing, com layout em tons de blush/nude harmonizando
-com a foto da Carol, fundo animado e foco forte em conversão via WhatsApp.
+Versão com estética cinematográfica escura, alto contraste, fundo animado
+(luz + grão), foco total em conversão via WhatsApp e depoimentos com imagens
+de mulheres.
 
 ## Como rodar
 
@@ -10,6 +11,6 @@ npm install
 npm run dev
 ```
 
-Depois é só conectar o repositório na Vercel.
+Depois, é só conectar o repositório na Vercel.
 
-Foto principal: `public/carol-hero.jpg` (a mesma que você enviou).
+A foto principal da Carol está em `public/carol-hero.jpg` (a imagem que você enviou).
