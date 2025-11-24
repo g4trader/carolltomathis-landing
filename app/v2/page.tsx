@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 const WHATSAPP_LINK =
   "https://wa.me/555184002284?text=Oi%20Carol,%20vim%20do%20seu%20site%20e%20quero%20saber%20mais%20sobre%20a%20mentoria.";
@@ -69,6 +69,19 @@ const reels = [
 function ImageCarousel({ images }: { images: typeof carolImages }) {
   const [currentIndex, setCurrentIndex] = useState(0);
 
+  // Autoplay: muda de slide automaticamente a cada 5 segundos
+  useEffect(() => {
+    if (images.length <= 1) return; // Não precisa de autoplay se houver apenas uma imagem
+
+    const interval = setInterval(() => {
+      setCurrentIndex((prevIndex) => 
+        prevIndex === images.length - 1 ? 0 : prevIndex + 1
+      );
+    }, 5000); // 5 segundos
+
+    return () => clearInterval(interval);
+  }, [images.length]);
+
   const goToSlide = (index: number) => {
     setCurrentIndex(index);
   };
@@ -107,18 +120,6 @@ function ImageCarousel({ images }: { images: typeof carolImages }) {
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
             </div>
           ))}
-        </div>
-
-        {/* Badge de autoridade no canto superior */}
-        <div className="absolute top-6 left-6 right-6 flex items-start justify-between z-10">
-          <div className="card-soft bg-cocoa/95 backdrop-blur-sm px-4 py-2.5 border-champagne/30">
-            <p className="text-[10px] font-semibold uppercase tracking-wider text-emerald mb-1">
-              Especialista em
-            </p>
-            <p className="text-sm font-semibold text-champagne">
-              Relacionamentos Conscientes
-            </p>
-          </div>
         </div>
 
         {/* Informações da Carol na parte inferior */}
