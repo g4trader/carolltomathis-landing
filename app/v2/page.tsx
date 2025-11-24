@@ -1,5 +1,33 @@
+'use client';
+
+import { useState } from 'react';
+
 const WHATSAPP_LINK =
   "https://wa.me/555184002284?text=Oi%20Carol,%20vim%20do%20seu%20site%20e%20quero%20saber%20mais%20sobre%20a%20mentoria.";
+
+// Array de imagens da Carol - adicione os nomes das imagens que você colocar no /public
+const carolImages = [
+  {
+    src: "/carol-hero.jpg",
+    alt: "Carol Tomathis falando em público com microfone"
+  },
+  {
+    src: "/carol-1.jpg", // Substitua pelos nomes reais das imagens
+    alt: "Carol Tomathis"
+  },
+  {
+    src: "/carol-2.jpg",
+    alt: "Carol Tomathis"
+  },
+  {
+    src: "/carol-3.jpg",
+    alt: "Carol Tomathis"
+  },
+  {
+    src: "/carol-4.jpg",
+    alt: "Carol Tomathis"
+  }
+];
 
 const testimonials = [
   {
@@ -37,101 +65,166 @@ const reels = [
   }
 ];
 
+// Componente do Carrossel
+function ImageCarousel({ images }: { images: typeof carolImages }) {
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  const goToSlide = (index: number) => {
+    setCurrentIndex(index);
+  };
+
+  const goToPrevious = () => {
+    setCurrentIndex((prevIndex) => 
+      prevIndex === 0 ? images.length - 1 : prevIndex - 1
+    );
+  };
+
+  const goToNext = () => {
+    setCurrentIndex((prevIndex) => 
+      prevIndex === images.length - 1 ? 0 : prevIndex + 1
+    );
+  };
+
+  return (
+    <div className="relative w-full">
+      {/* Efeito de brilho/glow atrás */}
+      <div className="absolute -inset-8 rounded-4xl bg-gradient-to-br from-champagne/30 via-nude/40 to-blush/50 blur-3xl opacity-60" />
+      
+      {/* Container principal do carrossel */}
+      <div className="relative h-[500px] sm:h-[600px] lg:h-[700px] w-full overflow-hidden rounded-4xl border-2 border-champagne/30 bg-espresso/90 shadow-cinematic">
+        {/* Imagens do carrossel */}
+        <div 
+          className="flex transition-transform duration-500 ease-in-out h-full"
+          style={{ transform: `translateX(-${currentIndex * 100}%)` }}
+        >
+          {images.map((image, index) => (
+            <div key={index} className="min-w-full h-full relative">
+              <img
+                src={image.src}
+                alt={image.alt}
+                className="h-full w-full object-cover object-center"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+            </div>
+          ))}
+        </div>
+
+        {/* Badge de autoridade no canto superior */}
+        <div className="absolute top-6 left-6 right-6 flex items-start justify-between z-10">
+          <div className="card-soft bg-cocoa/95 backdrop-blur-sm px-4 py-2.5 border-champagne/30">
+            <p className="text-[10px] font-semibold uppercase tracking-wider text-emerald mb-1">
+              Especialista em
+            </p>
+            <p className="text-sm font-semibold text-champagne">
+              Relacionamentos Conscientes
+            </p>
+          </div>
+        </div>
+
+        {/* Informações da Carol na parte inferior */}
+        <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/95 via-black/80 to-transparent px-8 pb-8 pt-20 z-10">
+          <div className="space-y-2">
+            <h2 className="font-display text-2xl sm:text-3xl font-bold text-champagne">
+              Carol Tomathis
+            </h2>
+            <p className="text-sm font-semibold text-emerald mb-3">
+              Mentora de Relacionamentos
+            </p>
+            <p className="text-sm text-champagne/90 leading-relaxed max-w-md">
+              Para mulheres fortes que decidiram viver relações igualmente fortes.
+            </p>
+          </div>
+        </div>
+
+        {/* Botões de navegação */}
+        {images.length > 1 && (
+          <>
+            <button
+              onClick={goToPrevious}
+              className="absolute left-4 top-1/2 -translate-y-1/2 z-20 h-12 w-12 rounded-full bg-black/50 hover:bg-black/70 backdrop-blur-sm border border-champagne/30 flex items-center justify-center text-champagne transition-all hover:scale-110"
+              aria-label="Imagem anterior"
+            >
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+              </svg>
+            </button>
+            <button
+              onClick={goToNext}
+              className="absolute right-4 top-1/2 -translate-y-1/2 z-20 h-12 w-12 rounded-full bg-black/50 hover:bg-black/70 backdrop-blur-sm border border-champagne/30 flex items-center justify-center text-champagne transition-all hover:scale-110"
+              aria-label="Próxima imagem"
+            >
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+              </svg>
+            </button>
+          </>
+        )}
+
+        {/* Indicadores de slide */}
+        {images.length > 1 && (
+          <div className="absolute bottom-20 left-1/2 -translate-x-1/2 z-20 flex gap-2">
+            {images.map((_, index) => (
+              <button
+                key={index}
+                onClick={() => goToSlide(index)}
+                className={`h-2 rounded-full transition-all ${
+                  index === currentIndex 
+                    ? 'w-8 bg-emerald' 
+                    : 'w-2 bg-champagne/40 hover:bg-champagne/60'
+                }`}
+                aria-label={`Ir para slide ${index + 1}`}
+              />
+            ))}
+          </div>
+        )}
+      </div>
+    </div>
+  );
+}
+
 export default function Page() {
   return (
     <main className="relative pb-20">
-      {/* HERO - VERSÃO 2: Foco na Carol com Autoridade */}
+      {/* HERO - VERSÃO 2: Foco TOTAL na Carol */}
       <section className="section pt-16 pb-24">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-          {/* Lado Esquerdo: Imagem da Carol com Destaque */}
+          {/* Lado Esquerdo: Carrossel de Imagens da Carol */}
           <div className="relative order-2 lg:order-1">
-            <div className="relative">
-              {/* Efeito de brilho/glow atrás */}
-              <div className="absolute -inset-8 rounded-4xl bg-gradient-to-br from-champagne/30 via-nude/40 to-blush/50 blur-3xl opacity-60" />
-              
-              {/* Container principal da imagem */}
-              <div className="relative h-[500px] sm:h-[600px] lg:h-[700px] w-full overflow-hidden rounded-4xl border-2 border-champagne/30 bg-espresso/90 shadow-cinematic">
-                <img
-                  src="/carol-hero.jpg"
-                  alt="Carol Tomathis - Mentora de Relacionamentos"
-                  className="h-full w-full object-cover object-center"
-                />
-                
-                {/* Overlay com gradiente sutil */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
-                
-                {/* Badge de autoridade no canto superior */}
-                <div className="absolute top-6 left-6 right-6 flex items-start justify-between">
-                  <div className="card-soft bg-cocoa/95 backdrop-blur-sm px-4 py-2.5 border-champagne/30">
-                    <p className="text-[10px] font-semibold uppercase tracking-wider text-emerald mb-1">
-                      Especialista em
-                    </p>
-                    <p className="text-sm font-semibold text-champagne">
-                      Relacionamentos Conscientes
-                    </p>
-                  </div>
-                </div>
-                
-                {/* Informações da Carol na parte inferior */}
-                <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/95 via-black/80 to-transparent px-8 pb-8 pt-20">
-                  <div className="space-y-2">
-                    <h2 className="font-display text-2xl sm:text-3xl font-bold text-champagne">
-                      Carol Tomathis
-                    </h2>
-                    <p className="text-sm font-semibold text-emerald mb-3">
-                      Mentora de Relacionamentos
-                    </p>
-                    <p className="text-sm text-champagne/90 leading-relaxed max-w-md">
-                      Para mulheres fortes que decidiram viver relações igualmente fortes.
-                    </p>
-                    
-                    {/* Elementos de autoridade */}
-                    <div className="flex flex-wrap gap-4 mt-4 pt-4 border-t border-champagne/20">
-                      <div className="flex items-center gap-2">
-                        <div className="h-8 w-8 rounded-full bg-emerald/20 flex items-center justify-center">
-                          <span className="text-emerald text-xs font-bold">✓</span>
-                        </div>
-                        <span className="text-xs text-champagne/80">Conteúdo diário no Instagram</span>
-                      </div>
-                      <div className="flex items-center gap-2">
-                        <div className="h-8 w-8 rounded-full bg-emerald/20 flex items-center justify-center">
-                          <span className="text-emerald text-xs font-bold">✓</span>
-                        </div>
-                        <span className="text-xs text-champagne/80">Mentoria personalizada</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+            <ImageCarousel images={carolImages} />
           </div>
 
-          {/* Lado Direito: Conteúdo Principal */}
+          {/* Lado Direito: Conteúdo sobre a Carol */}
           <div className="relative order-1 lg:order-2 space-y-8">
             <div className="space-y-6">
               <span className="badge-pill">
-                Mentoria de Relacionamentos
+                Carol Tomathis
               </span>
 
               <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight text-champagne">
-                Seu segundo relacionamento pode ser{" "}
-                <span className="text-nude">
-                  o mais consciente da sua vida.
-                </span>
+                Quem é a Carol
               </h1>
 
-              <p className="text-base sm:text-lg text-champagne/90 leading-relaxed max-w-xl">
-                A mentoria da Carol foi criada para mulheres que já viveram
-                relacionamentos difíceis e decidiram que não vão repetir a mesma
-                história. Você entende o que se repete, cura feridas que ficaram
-                abertas e aprende a escolher relações que conversem com a mulher
-                que você é hoje.
+              <p className="text-base sm:text-lg text-champagne/90 leading-relaxed">
+                Conteúdo diário, conversa direta e uma mentoria que nasceu da vida real.
               </p>
 
-              {/* Destaque de autoridade */}
+              <p className="text-base sm:text-lg text-champagne/80 leading-relaxed">
+                No Instagram, Carol compartilha reflexões, áudios e cortes de aulas
+                sobre segundos relacionamentos, limites e autoestima. As dúvidas das
+                seguidoras viraram a base da mentoria que hoje acompanha mulheres
+                do Brasil inteiro no recomeço amoroso.
+              </p>
+
+              <p className="text-base sm:text-lg text-champagne/80 leading-relaxed">
+                Aqui não tem frase pronta. É olhar para a sua história com honestidade
+                e delicadeza, para construir decisões mais maduras sem perder a leveza
+                de acreditar no amor de novo.
+              </p>
+
+              {/* Elementos de autoridade da Carol */}
               <div className="card-soft bg-cocoa/60 border-champagne/25 p-5 space-y-3">
                 <p className="text-xs font-semibold uppercase tracking-wider text-emerald">
-                  Por que escolher a Carol?
+                  Por que confiar na Carol?
                 </p>
                 <div className="space-y-2">
                   <div className="flex items-start gap-3">
@@ -160,116 +253,110 @@ export default function Page() {
                   </div>
                 </div>
               </div>
-
-              <div className="flex flex-col sm:flex-row gap-3 pt-2">
-                <a href={WHATSAPP_LINK} className="btn-primary text-center" target="_blank">
-                  Quero falar com a Carol agora
-                </a>
-                <a href="#mentoria" className="btn-secondary text-center">
-                  Ver como a mentoria funciona
-                </a>
-              </div>
-
-              {/* Lista de benefícios compacta */}
-              <div className="flex flex-wrap gap-4 text-xs text-champagne/70 pt-2">
-                <div className="flex items-center gap-2">
-                  <span className="inline-flex h-5 w-5 items-center justify-center rounded-full bg-cocoa text-[10px] font-semibold">
-                    1
-                  </span>
-                  <span>Atendimento on-line, linguagem real</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <span className="inline-flex h-5 w-5 items-center justify-center rounded-full bg-cocoa text-[10px] font-semibold">
-                    2
-                  </span>
-                  <span>Foco em recomeço amoroso</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <span className="inline-flex h-5 w-5 items-center justify-center rounded-full bg-cocoa text-[10px] font-semibold">
-                    3
-                  </span>
-                  <span>Triagem gratuita pelo WhatsApp</span>
-                </div>
-              </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* QUEM É A CAROL + MENTORIA */}
+      {/* SEGUNDA DOBRA: MENTORIA */}
       <section
         id="mentoria"
-        className="section pb-18 grid gap-10 lg:grid-cols-[1.1fr,0.9fr] items-start"
+        className="section pb-18 space-y-10"
       >
-        <div className="space-y-6">
-          <p className="text-label">Quem é a Carol</p>
-          <h2 className="font-display text-2xl sm:text-3xl font-semibold text-champagne">
-            Conteúdo diário, conversa direta e uma mentoria que nasceu da vida real.
+        <div className="space-y-6 max-w-3xl">
+          <p className="text-label">Mentoria de Relacionamentos</p>
+          <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight text-champagne">
+            Seu segundo relacionamento pode ser{" "}
+            <span className="text-nude">
+              o mais consciente da sua vida.
+            </span>
           </h2>
-          <p className="text-sm sm:text-base text-champagne/80">
-            No Instagram, Carol compartilha reflexões, áudios e cortes de aulas
-            sobre segundos relacionamentos, limites e autoestima. As dúvidas das
-            seguidoras viraram a base da mentoria que hoje acompanha mulheres
-            do Brasil inteiro no recomeço amoroso.
+          <p className="text-lg sm:text-xl text-champagne/90 leading-relaxed">
+            A mentoria da Carol foi criada para mulheres que já viveram
+            relacionamentos difíceis e decidiram que não vão repetir a mesma
+            história. Você entende o que se repete, cura feridas que ficaram
+            abertas e aprende a escolher relações que conversem com a mulher
+            que você é hoje.
           </p>
-          <p className="text-sm sm:text-base text-champagne/80">
-            Aqui não tem frase pronta. É olhar para a sua história com honestidade
-            e delicadeza, para construir decisões mais maduras sem perder a leveza
-            de acreditar no amor de novo.
-          </p>
-
-          <div className="grid gap-4 sm:grid-cols-2">
-            <div className="card-soft space-y-2">
-              <p className="text-label">Para quem é</p>
-              <p className="text-sm font-semibold text-champagne">
-                Mulheres em fase de recomeço
-              </p>
-              <p className="text-xs text-champagne/80">
-                Separadas, recém-saídas de relações longas ou com medo de errar
-                de novo ao se abrir para alguém.
-              </p>
-            </div>
-            <div className="card-soft space-y-2">
-              <p className="text-label">Objetivo</p>
-              <p className="text-sm font-semibold text-champagne">
-                Relações mais conscientes
-              </p>
-              <p className="text-xs text-champagne/80">
-                Não é sobre arrumar alguém a qualquer custo, é sobre arrumar o
-                seu terreno interno para se relacionar em outro nível.
-              </p>
-            </div>
-          </div>
         </div>
 
-        <aside className="card-dark space-y-4">
-          <p className="text-label">Pacote de mentoria</p>
-          <h3 className="text-lg font-semibold text-champagne">
-            Um acompanhamento estruturado, mas leve, para o seu recomeço.
-          </h3>
-          <p className="text-xs text-champagne/80">
-            • Encontros on-line semanais{" "}
-            <br />
-            • Sessões de 60 minutos via vídeo
-            <br />
-            • Exercícios e materiais enviados após as sessões
-            <br />
-            • Suporte pontual pelo WhatsApp entre os encontros
-          </p>
-          <p className="text-xs text-champagne/70">
-            Valores e formas de pagamento são combinados diretamente com a Carol,
-            respeitando a sua realidade. O primeiro passo é uma conversa rápida
-            pelo WhatsApp.
-          </p>
-          <a href={WHATSAPP_LINK} className="btn-primary w-full" target="_blank">
-            Quero alinhar valores pelo WhatsApp
-          </a>
-          <div className="text-[11px] text-champagne/70 space-y-1">
-            <p>WhatsApp: +55 (51) 8400-2284</p>
-            <p>E-mail: mentoria@carolltomathis.com.br</p>
-            <p>Instagram: @carolltomathis</p>
+        <div className="grid gap-10 lg:grid-cols-[1.1fr,0.9fr] items-start">
+          <div className="space-y-6">
+            <div className="grid gap-4 sm:grid-cols-2">
+              <div className="card-soft space-y-2">
+                <p className="text-label">Para quem é</p>
+                <p className="text-sm font-semibold text-champagne">
+                  Mulheres em fase de recomeço
+                </p>
+                <p className="text-xs text-champagne/80">
+                  Separadas, recém-saídas de relações longas ou com medo de errar
+                  de novo ao se abrir para alguém.
+                </p>
+              </div>
+              <div className="card-soft space-y-2">
+                <p className="text-label">Objetivo</p>
+                <p className="text-sm font-semibold text-champagne">
+                  Relações mais conscientes
+                </p>
+                <p className="text-xs text-champagne/80">
+                  Não é sobre arrumar alguém a qualquer custo, é sobre arrumar o
+                  seu terreno interno para se relacionar em outro nível.
+                </p>
+              </div>
+            </div>
+
+            {/* Lista de benefícios */}
+            <div className="flex flex-wrap gap-4 text-sm text-champagne/80 pt-4">
+              <div className="flex items-center gap-2">
+                <span className="inline-flex h-6 w-6 items-center justify-center rounded-full bg-cocoa text-xs font-semibold">
+                  1
+                </span>
+                <span>Atendimento on-line, com linguagem real e sem julgamentos.</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <span className="inline-flex h-6 w-6 items-center justify-center rounded-full bg-cocoa text-xs font-semibold">
+                  2
+                </span>
+                <span>Foco em mulheres em recomeço amoroso — separadas ou já em outra relação.</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <span className="inline-flex h-6 w-6 items-center justify-center rounded-full bg-cocoa text-xs font-semibold">
+                  3
+                </span>
+                <span>Triagem gratuita pelo WhatsApp para entender seu momento antes de começar.</span>
+              </div>
+            </div>
           </div>
-        </aside>
+
+          <aside className="card-dark space-y-4">
+            <p className="text-label">Pacote de mentoria</p>
+            <h3 className="text-lg font-semibold text-champagne">
+              Um acompanhamento estruturado, mas leve, para o seu recomeço.
+            </h3>
+            <p className="text-xs text-champagne/80">
+              • Encontros on-line semanais{" "}
+              <br />
+              • Sessões de 60 minutos via vídeo
+              <br />
+              • Exercícios e materiais enviados após as sessões
+              <br />
+              • Suporte pontual pelo WhatsApp entre os encontros
+            </p>
+            <p className="text-xs text-champagne/70">
+              Valores e formas de pagamento são combinados diretamente com a Carol,
+              respeitando a sua realidade. O primeiro passo é uma conversa rápida
+              pelo WhatsApp.
+            </p>
+            <a href={WHATSAPP_LINK} className="btn-primary w-full" target="_blank">
+              Quero alinhar valores pelo WhatsApp
+            </a>
+            <div className="text-[11px] text-champagne/70 space-y-1">
+              <p>WhatsApp: +55 (51) 8400-2284</p>
+              <p>E-mail: mentoria@carolltomathis.com.br</p>
+              <p>Instagram: @carolltomathis</p>
+            </div>
+          </aside>
+        </div>
       </section>
 
       {/* REELS */}
@@ -426,4 +513,3 @@ export default function Page() {
     </main>
   );
 }
-
