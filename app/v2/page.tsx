@@ -5,14 +5,14 @@ import { useState, useEffect } from 'react';
 const WHATSAPP_LINK =
   "https://wa.me/555184002284?text=Oi%20Carol,%20vim%20do%20seu%20site%20e%20quero%20saber%20mais%20sobre%20a%20mentoria.";
 
-// Array de imagens da Carol - adicione os nomes das imagens que você colocar no /public
+// Array de imagens da Carol
 const carolImages = [
   {
     src: "/carol-hero.jpg",
     alt: "Carol Tomathis falando em público com microfone"
   },
   {
-    src: "/carol-1.jpg", // Substitua pelos nomes reais das imagens
+    src: "/carol-1.jpg",
     alt: "Carol Tomathis"
   },
   {
@@ -25,6 +25,14 @@ const carolImages = [
   },
   {
     src: "/carol-4.jpg",
+    alt: "Carol Tomathis"
+  },
+  {
+    src: "/carol-5.jpg",
+    alt: "Carol Tomathis"
+  },
+  {
+    src: "/carol-6.jpg",
     alt: "Carol Tomathis"
   }
 ];

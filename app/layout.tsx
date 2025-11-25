@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import Header from "../components/Header";
+import Footer from "../components/Footer";
 
 const WHATSAPP_LINK =
   "https://wa.me/555184002284?text=Oi%20Carol,%20vim%20do%20seu%20site%20e%20quero%20saber%20mais%20sobre%20a%20mentoria.";
@@ -17,7 +19,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="pt-BR">
-      <body className="min-h-screen bg-espresso text-champagne antialiased">
+      <body className="min-h-screen bg-espresso text-champagne antialiased flex flex-col">
         {/* Fundo cinematográfico com luz e grão */}
         <div className="fixed inset-0 -z-30 bg-gradient-to-b from-black via-espresso to-black" />
         <div className="pointer-events-none fixed inset-0 -z-20">
@@ -31,7 +33,13 @@ export default function RootLayout({
           </div>
         </div>
 
-        {children}
+        <Header />
+        
+        <main className="flex-1">
+          {children}
+        </main>
+
+        <Footer />
 
         {/* Botão flutuante de WhatsApp */}
         <a
