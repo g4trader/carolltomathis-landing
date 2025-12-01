@@ -263,21 +263,20 @@ export default function Page() {
         id="mentoria"
         className="section pb-18 space-y-10"
       >
-        <div className="space-y-6 max-w-3xl">
-          <p className="text-label">Mentoria de Relacionamentos</p>
-          <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight text-champagne">
-            Para mulheres que escolheram não repetir a mesma história
-          </h2>
-          <p className="text-lg sm:text-xl text-champagne/90 leading-relaxed">
-            - A mentoria da Caroll foi criada para mulheres que já viveram relacionamentos difíceis e decidiram que o próximo capítulo será diferente. Aqui, você compreende o que se repete, cura feridas que ainda doem e aprende a escolher relações que combinam com a mulher que você quer se tornar.
-          </p>
-          <p className="text-lg sm:text-xl text-champagne/90 leading-relaxed">
-            Quando você se reconstrói por dentro, algo poderoso acontece: sua forma de amar se transforma, seus limites ganham clareza, sua autoestima se fortalece — e, desse novo lugar, você abre espaço para viver um amor que realmente faz sentido. Um amor saudável, verdadeiro, possível e alinhado com a mulher que você QUER SE tornou.
-          </p>
-        </div>
-
         <div className="grid gap-10 lg:grid-cols-[1.1fr,0.9fr] items-start">
           <div className="space-y-6">
+            <div className="space-y-6">
+              <p className="text-label">Mentoria de Relacionamentos</p>
+              <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight text-champagne">
+                Para mulheres que escolheram não repetir a mesma história
+              </h2>
+              <p className="text-lg sm:text-xl text-champagne/90 leading-relaxed">
+                - A mentoria da Caroll foi criada para mulheres que já viveram relacionamentos difíceis e decidiram que o próximo capítulo será diferente. Aqui, você compreende o que se repete, cura feridas que ainda doem e aprende a escolher relações que combinam com a mulher que você quer se tornar.
+              </p>
+              <p className="text-lg sm:text-xl text-champagne/90 leading-relaxed">
+                Quando você se reconstrói por dentro, algo poderoso acontece: sua forma de amar se transforma, seus limites ganham clareza, sua autoestima se fortalece — e, desse novo lugar, você abre espaço para viver um amor que realmente faz sentido. Um amor saudável, verdadeiro, possível e alinhado com a mulher que você QUER SE tornou.
+              </p>
+            </div>
             <div className="grid gap-4 sm:grid-cols-2">
               <div className="card-soft space-y-2">
                 <p className="text-label">Para quem é</p>
