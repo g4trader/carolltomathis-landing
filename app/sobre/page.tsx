@@ -19,16 +19,11 @@ export default function SobrePage() {
             </p>
 
             <p className="text-sm sm:text-base">
-              Caroll compartilha reflexões, áudios e cortes de aulas
-              sobre segundos relacionamentos, limites e autoestima. As dúvidas das
-              seguidoras viraram a base da mentoria que hoje acompanha mulheres
-              do Brasil inteiro no recomeço amoroso.
+              Caroll compartilha reflexões, áudios e cortes de aulas sobre segundos relacionamentos, limites e autoestima. - A mentoria nasceu da sua própria jornada de reconstrução emocional e do desejo genuíno de ajudar outras mulheres a viverem um recomeço amoroso mais consciente.
             </p>
 
             <p className="text-sm sm:text-base">
-              Aqui não tem frase pronta. É olhar para a sua história com honestidade
-              e delicadeza, para construir decisões mais maduras sem perder a leveza
-              de acreditar no amor de novo.
+              Aqui não existem respostas prontas. O foco é olhar para a própria história com honestidade e delicadeza, construindo decisões mais maduras sem perder a leveza de acreditar no amor novamente.
             </p>
           </div>
 

@@ -214,16 +214,11 @@ export default function Page() {
               </p>
 
               <p className="text-base sm:text-lg text-champagne/80 leading-relaxed">
-                Caroll compartilha reflexões, áudios e cortes de aulas
-                sobre segundos relacionamentos, limites e autoestima. As dúvidas das
-                seguidoras viraram a base da mentoria que hoje acompanha mulheres
-                do Brasil inteiro no recomeço amoroso.
+                Caroll compartilha reflexões, áudios e cortes de aulas sobre segundos relacionamentos, limites e autoestima. - A mentoria nasceu da sua própria jornada de reconstrução emocional e do desejo genuíno de ajudar outras mulheres a viverem um recomeço amoroso mais consciente.
               </p>
 
               <p className="text-base sm:text-lg text-champagne/80 leading-relaxed">
-                Aqui não tem frase pronta. É olhar para a sua história com honestidade
-                e delicadeza, para construir decisões mais maduras sem perder a leveza
-                de acreditar no amor de novo.
+                Aqui não existem respostas prontas. O foco é olhar para a própria história com honestidade e delicadeza, construindo decisões mais maduras sem perder a leveza de acreditar no amor novamente.
               </p>
 
               {/* Elementos de autoridade da Carol */}
@@ -271,17 +266,13 @@ export default function Page() {
         <div className="space-y-6 max-w-3xl">
           <p className="text-label">Mentoria de Relacionamentos</p>
           <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight text-champagne">
-            Seu segundo relacionamento pode ser{" "}
-            <span className="text-nude">
-              o mais consciente da sua vida.
-            </span>
+            Para Mulheres que Escolheram Não Repetir a Mesma História
           </h2>
           <p className="text-lg sm:text-xl text-champagne/90 leading-relaxed">
-            A mentoria da Caroll foi criada para mulheres que já viveram
-            relacionamentos difíceis e decidiram que não vão repetir a mesma
-            história. Você entende o que se repete, cura feridas que ficaram
-            abertas e aprende a escolher relações que conversem com a mulher
-            que você é hoje.
+            - A mentoria da Caroll foi criada para mulheres que já viveram relacionamentos difíceis e decidiram que o próximo capítulo será diferente. Aqui, você compreende o que se repete, cura feridas que ainda doem e aprende a escolher relações que combinam com a mulher que você quer se tornar.
+          </p>
+          <p className="text-lg sm:text-xl text-champagne/90 leading-relaxed">
+            Quando você se reconstrói por dentro, algo poderoso acontece: sua forma de amar se transforma, seus limites ganham clareza, sua autoestima se fortalece — e, desse novo lugar, você abre espaço para viver um amor que realmente faz sentido. Um amor saudável, verdadeiro, possível e alinhado com a mulher que você QUER SE tornou.
           </p>
         </div>
 
