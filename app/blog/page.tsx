@@ -1,28 +1,18 @@
+import Link from 'next/link';
+import { getAllArticles } from '../../lib/articles';
+
 export default function BlogPage() {
-  // Exemplo de posts - você pode substituir por dados reais de uma API ou CMS
-  const posts = [
-    {
-      id: 1,
-      title: "Como identificar padrões em relacionamentos",
-      excerpt: "Entenda como reconhecer comportamentos que se repetem e como quebrar ciclos negativos.",
-      date: "15 de Janeiro, 2024",
-      category: "Relacionamentos"
-    },
-    {
-      id: 2,
-      title: "O que é um relacionamento consciente?",
-      excerpt: "Descubra como construir relações mais saudáveis e alinhadas com quem você é hoje.",
-      date: "10 de Janeiro, 2024",
-      category: "Autoconhecimento"
-    },
-    {
-      id: 3,
-      title: "Estabelecendo limites saudáveis",
-      excerpt: "Aprenda a colocar limites claros sem perder a conexão e o respeito no relacionamento.",
-      date: "5 de Janeiro, 2024",
-      category: "Limites"
-    }
-  ];
+  const articles = getAllArticles();
+
+  // Função para formatar data
+  const formatDate = (dateString: string) => {
+    const date = new Date(dateString);
+    return date.toLocaleDateString('pt-BR', {
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric',
+    });
+  };
 
   return (
     <main className="relative pb-20">
@@ -39,38 +29,37 @@ export default function BlogPage() {
           </div>
 
           <div className="space-y-6">
-            {posts.map((post) => (
+            {articles.map((article) => (
               <article
-                key={post.id}
-                className="card-soft hover:border-champagne/30 transition-colors cursor-pointer"
+                key={article.slug}
+                className="card-soft hover:border-champagne/30 transition-colors"
               >
-                <div className="space-y-3">
-                  <div className="flex items-center gap-3 text-xs text-champagne/60">
-                    <span className="badge-pill text-[10px]">{post.category}</span>
-                    <span>{post.date}</span>
+                <Link href={`/blog/${article.slug}`} className="block">
+                  <div className="space-y-3">
+                    <div className="flex items-center gap-3 text-xs text-champagne/60">
+                      <span className="badge-pill text-[10px]">{article.category}</span>
+                      <span>{formatDate(article.date)}</span>
+                    </div>
+                    <h2 className="font-display text-2xl font-semibold text-champagne">
+                      {article.title}
+                    </h2>
+                    <p className="text-sm text-champagne/80 leading-relaxed">
+                      {article.excerpt}
+                    </p>
+                    <span className="inline-flex items-center gap-2 text-sm font-semibold text-emerald hover:text-emerald/80 transition-colors">
+                      Ler mais
+                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                      </svg>
+                    </span>
                   </div>
-                  <h2 className="font-display text-2xl font-semibold text-champagne">
-                    {post.title}
-                  </h2>
-                  <p className="text-sm text-champagne/80 leading-relaxed">
-                    {post.excerpt}
-                  </p>
-                  <a
-                    href="#"
-                    className="inline-flex items-center gap-2 text-sm font-semibold text-emerald hover:text-emerald/80 transition-colors"
-                  >
-                    Ler mais
-                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                    </svg>
-                  </a>
-                </div>
+                </Link>
               </article>
             ))}
           </div>
 
           {/* Mensagem caso não haja posts */}
-          {posts.length === 0 && (
+          {articles.length === 0 && (
             <div className="card-soft text-center py-12">
               <p className="text-champagne/70">
                 Em breve, novos artigos serão publicados aqui.

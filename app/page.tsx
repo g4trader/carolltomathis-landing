@@ -9,31 +9,27 @@ const WHATSAPP_LINK =
 const carolImages = [
   {
     src: "/carol-hero.jpg",
-    alt: "Carol Tomathis falando em público com microfone"
+    alt: "Caroll Tomathis falando em público com microfone"
   },
   {
     src: "/carol-1.jpg",
-    alt: "Carol Tomathis"
+    alt: "Caroll Tomathis"
   },
   {
     src: "/carol-2.jpg",
-    alt: "Carol Tomathis"
-  },
-  {
-    src: "/carol-3.jpg",
-    alt: "Carol Tomathis"
+    alt: "Caroll Tomathis"
   },
   {
     src: "/carol-4.jpg",
-    alt: "Carol Tomathis"
+    alt: "Caroll Tomathis"
   },
   {
     src: "/carol-5.jpg",
-    alt: "Carol Tomathis"
+    alt: "Caroll Tomathis"
   },
   {
     src: "/carol-6.jpg",
-    alt: "Carol Tomathis"
+    alt: "Caroll Tomathis"
   }
 ];
 
@@ -134,7 +130,7 @@ function ImageCarousel({ images }: { images: typeof carolImages }) {
         <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/95 via-black/80 to-transparent px-8 pb-8 pt-20 z-10">
           <div className="space-y-2">
             <h2 className="font-display text-2xl sm:text-3xl font-bold text-champagne">
-              Carol Tomathis
+              Caroll Tomathis
             </h2>
             <p className="text-sm font-semibold text-emerald mb-3">
               Mentora de Relacionamentos
@@ -206,11 +202,11 @@ export default function Page() {
           <div className="relative order-1 lg:order-2 space-y-8">
             <div className="space-y-6">
               <span className="badge-pill">
-                Carol Tomathis
+                Caroll Tomathis
               </span>
 
               <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight text-champagne">
-                Quem é a Carol
+                Quem é a Caroll
               </h1>
 
               <p className="text-base sm:text-lg text-champagne/90 leading-relaxed">
@@ -218,7 +214,7 @@ export default function Page() {
               </p>
 
               <p className="text-base sm:text-lg text-champagne/80 leading-relaxed">
-                No Instagram, Carol compartilha reflexões, áudios e cortes de aulas
+                Caroll compartilha reflexões, áudios e cortes de aulas
                 sobre segundos relacionamentos, limites e autoestima. As dúvidas das
                 seguidoras viraram a base da mentoria que hoje acompanha mulheres
                 do Brasil inteiro no recomeço amoroso.
@@ -233,7 +229,7 @@ export default function Page() {
               {/* Elementos de autoridade da Carol */}
               <div className="card-soft bg-cocoa/60 border-champagne/25 p-5 space-y-3">
                 <p className="text-xs font-semibold uppercase tracking-wider text-emerald">
-                  Por que confiar na Carol?
+                  Por que confiar na Caroll?
                 </p>
                 <div className="space-y-2">
                   <div className="flex items-start gap-3">
@@ -281,7 +277,7 @@ export default function Page() {
             </span>
           </h2>
           <p className="text-lg sm:text-xl text-champagne/90 leading-relaxed">
-            A mentoria da Carol foi criada para mulheres que já viveram
+            A mentoria da Caroll foi criada para mulheres que já viveram
             relacionamentos difíceis e decidiram que não vão repetir a mesma
             história. Você entende o que se repete, cura feridas que ficaram
             abertas e aprende a escolher relações que conversem com a mulher
@@ -352,7 +348,7 @@ export default function Page() {
               • Suporte pontual pelo WhatsApp entre os encontros
             </p>
             <p className="text-xs text-champagne/70">
-              Valores e formas de pagamento são combinados diretamente com a Carol,
+              Valores e formas de pagamento são combinados diretamente com a Caroll,
               respeitando a sua realidade. O primeiro passo é uma conversa rápida
               pelo WhatsApp.
             </p>
@@ -377,7 +373,7 @@ export default function Page() {
               Alguns Reels que as seguidoras mais salvam.
             </h2>
             <p className="text-sm sm:text-base text-champagne/80">
-              Veja um pouco do jeito da Carol falar sobre amor, recomeços e
+              Veja um pouco do jeito da Caroll falar sobre amor, recomeços e
               limites — do jeitinho que você vai viver dentro da mentoria.
             </p>
           </div>
@@ -501,7 +497,7 @@ export default function Page() {
               Se você sentiu um "é sobre mim", não ignore essa sensação.
             </h3>
             <p className="text-sm text-champagne/80">
-              Uma conversa de alguns minutos com a Carol no WhatsApp já pode
+              Uma conversa de alguns minutos com a Caroll no WhatsApp já pode
               trazer alívio, clareza e o primeiro passo para um capítulo
               totalmente novo na sua vida amorosa.
             </p>
@@ -510,7 +506,7 @@ export default function Page() {
               className="btn-primary bg-emerald text-white hover:bg-emerald/90"
               target="_blank"
             >
-              Falar com a Carol agora pelo WhatsApp
+              Falar com a Caroll agora pelo WhatsApp
             </a>
             <p className="text-[11px] text-champagne/70">
               Sem compromisso, sem pressão. Apenas duas mulheres conversando

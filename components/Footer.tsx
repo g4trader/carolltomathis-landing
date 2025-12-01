@@ -11,7 +11,7 @@ export default function Footer() {
           {/* Sobre */}
           <div className="space-y-4">
             <h3 className="font-display text-lg font-semibold text-champagne mb-4">
-              Carol Tomathis
+              Caroll Tomathis
             </h3>
             <p className="text-sm text-champagne/70 leading-relaxed">
               Mentora de relacionamentos para mulheres fortes que decidiram viver relações igualmente fortes.
@@ -88,7 +88,7 @@ export default function Footer() {
         {/* Copyright */}
         <div className="mt-8 pt-8 border-t border-champagne/10 text-center">
           <p className="text-xs text-champagne/50">
-            © {new Date().getFullYear()} Carol Tomathis. Todos os direitos reservados.
+            © {new Date().getFullYear()} Caroll Tomathis. Todos os direitos reservados.
           </p>
         </div>
       </div>

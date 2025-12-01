@@ -9,7 +9,7 @@ export default function SobrePage() {
           <div className="space-y-4">
             <p className="text-label">Sobre</p>
             <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight text-champagne">
-              Quem é a Carol
+              Quem é a Caroll
             </h1>
           </div>
 
@@ -19,7 +19,7 @@ export default function SobrePage() {
             </p>
 
             <p className="text-sm sm:text-base">
-              No Instagram, Carol compartilha reflexões, áudios e cortes de aulas
+              Caroll compartilha reflexões, áudios e cortes de aulas
               sobre segundos relacionamentos, limites e autoestima. As dúvidas das
               seguidoras viraram a base da mentoria que hoje acompanha mulheres
               do Brasil inteiro no recomeço amoroso.
@@ -68,7 +68,7 @@ export default function SobrePage() {
               className="btn-primary inline-block"
               target="_blank"
             >
-              Falar com a Carol
+              Falar com a Caroll
             </a>
           </div>
         </div>
