@@ -266,7 +266,7 @@ export default function Page() {
         <div className="space-y-6 max-w-3xl">
           <p className="text-label">Mentoria de Relacionamentos</p>
           <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight text-champagne">
-            Para Mulheres que Escolheram Não Repetir a Mesma História
+            Para mulheres que escolheram não repetir a mesma história
           </h2>
           <p className="text-lg sm:text-xl text-champagne/90 leading-relaxed">
             - A mentoria da Caroll foi criada para mulheres que já viveram relacionamentos difíceis e decidiram que o próximo capítulo será diferente. Aqui, você compreende o que se repete, cura feridas que ainda doem e aprende a escolher relações que combinam com a mulher que você quer se tornar.
@@ -327,21 +327,22 @@ export default function Page() {
           <aside className="card-dark space-y-4">
             <p className="text-label">Pacote de mentoria</p>
             <h3 className="text-lg font-semibold text-champagne">
-              Um acompanhamento estruturado, mas leve, para o seu recomeço.
+              Como funciona?
             </h3>
             <p className="text-xs text-champagne/80">
-              • Encontros on-line semanais{" "}
-              <br />
-              • Sessões de 60 minutos via vídeo
-              <br />
-              • Exercícios e materiais enviados após as sessões
-              <br />
-              • Suporte pontual pelo WhatsApp entre os encontros
+              Encontros ao vivo (online) em grupo, com acompanhamento direto da mentora. Grupo pequeno e acolhedor para garantir profundidade e troca real. Exercícios práticos entre os encontros, para aplicar no seu dia a dia. Espaço de escuta, partilha e suporte emocional. Acesso a materiais extras (PDFs, aulas gravadas ou ferramentas práticas).
             </p>
-            <p className="text-xs text-champagne/70">
-              Valores e formas de pagamento são combinados diretamente com a Caroll,
-              respeitando a sua realidade. O primeiro passo é uma conversa rápida
-              pelo WhatsApp.
+            <h3 className="text-lg font-semibold text-champagne">
+              A Resset Relacional
+            </h3>
+            <p className="text-xs text-champagne/80">
+              A Resset Relacional é uma mentoria online e íntima, criada para quem está vivendo (ou deseja viver) um segundo relacionamento sem repetir os mesmos erros do passado. É um espaço seguro onde falamos da vida real: A culpa por estar feliz depois de um divórcio. O medo de errar de novo. A presença dos filhos, do ex, da nova rotina. As inseguranças que surgem mesmo depois do "eu te amo". Como construir um novo "nós" sem se anular. Aqui não tem conto de fadas. Tem escuta, direção e transformação emocional.
+            </p>
+            <h3 className="text-lg font-semibold text-champagne">
+              Essa mentoria é pra você se:
+            </h3>
+            <p className="text-xs text-champagne/80">
+              Está em um segundo relacionamento e sente que ainda carrega traumas ou bloqueios. Quer se comunicar com mais clareza e menos silêncio acumulado. Deseja viver um novo amor, mas ainda se sente presa ao passado. Está tentando construir uma nova família, mas não sabe como incluir filhos e rotina. Quer recomeçar com verdade, não com pressa.
             </p>
             <a href={WHATSAPP_LINK} className="btn-primary w-full" target="_blank">
               Quero alinhar valores pelo WhatsApp
