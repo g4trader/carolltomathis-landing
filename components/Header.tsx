@@ -60,16 +60,14 @@ export default function Header() {
             </Link>
           </li>
           <li>
-            <Link
-              href="/blog"
-              className={`text-sm font-medium transition-colors ${
-                isActive('/blog') 
-                  ? 'text-emerald' 
-                  : 'text-champagne/80 hover:text-champagne'
-              }`}
+            <a
+              href="https://carolltomathis.com.br/blog"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-sm font-medium transition-colors text-champagne/80 hover:text-champagne"
             >
               Blog
-            </Link>
+            </a>
           </li>
         </ul>
       </nav>
