@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import "./globals.css";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
@@ -19,6 +20,21 @@ export default function RootLayout({
 }) {
   return (
     <html lang="pt-BR">
+      <head>
+        {/* Google Analytics */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-85F9J6EZ3G"
+          strategy="afterInteractive"
+        />
+        <Script id="ga-gtag" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-85F9J6EZ3G');
+          `}
+        </Script>
+      </head>
       <body className="min-h-screen bg-espresso text-champagne antialiased flex flex-col">
         {/* Fundo cinematográfico com luz e grão */}
         <div className="fixed inset-0 -z-30 bg-gradient-to-b from-black via-espresso to-black" />
