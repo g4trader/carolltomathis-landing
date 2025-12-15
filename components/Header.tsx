@@ -18,7 +18,7 @@ export default function Header() {
       <nav className="section flex items-center justify-between py-4">
         {/* Logo */}
         <Link href="/" className="font-display text-xl font-semibold text-champagne hover:text-nude transition-colors">
-          Carol Tomathis
+          Caroll Tomathis
         </Link>
 
         {/* Menu */}
