@@ -18,7 +18,7 @@ export default function Header() {
       <nav className="section flex items-center justify-between py-4">
         {/* Logo */}
         <Link href="/" className="font-display text-xl font-semibold text-champagne hover:text-nude transition-colors">
-          Caroll Tomathis
+          Carol Tomathis
         </Link>
 
         {/* Menu */}
@@ -60,14 +60,16 @@ export default function Header() {
             </Link>
           </li>
           <li>
-            <a
-              href="https://carolltomathis.com.br/blog"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-sm font-medium transition-colors text-champagne/80 hover:text-champagne"
+            <Link
+              href="/blog"
+              className={`text-sm font-medium transition-colors ${
+                isActive('/blog') 
+                  ? 'text-emerald' 
+                  : 'text-champagne/80 hover:text-champagne'
+              }`}
             >
               Blog
-            </a>
+            </Link>
           </li>
         </ul>
       </nav>

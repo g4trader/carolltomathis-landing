@@ -40,9 +40,14 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/blog" className="text-sm text-champagne/70 hover:text-champagne transition-colors">
+                <a
+                  href="https://carolltomathis.com.br/blog"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-sm text-champagne/70 hover:text-champagne transition-colors"
+                >
                   Blog
-                </Link>
+                </a>
               </li>
             </ul>
           </div>
