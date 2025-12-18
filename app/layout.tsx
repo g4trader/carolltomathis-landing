@@ -8,7 +8,7 @@ const WHATSAPP_LINK =
   "https://wa.me/555184002284?text=Oi%20Carol,%20vim%20do%20seu%20site%20e%20quero%20saber%20mais%20sobre%20a%20mentoria.";
 
 export const metadata: Metadata = {
-  title: "Mentoria Cinematográfica de Relacionamentos | Caroll Tomathis",
+  title: "Caroll Tomathis: Mentoria de Relacionamentos",
   description:
     "Landing page premium da mentoria de relacionamentos da Caroll Tomathis, com foco em mulheres que decidiram reescrever a própria história amorosa com consciência.",
 };
